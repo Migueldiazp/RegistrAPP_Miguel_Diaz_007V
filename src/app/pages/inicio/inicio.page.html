@@ -1,0 +1,59 @@
+
+<ion-header>
+
+</ion-header>
+
+<ion-content >
+
+<ion-card>
+ <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label floating>Correo:</ion-label>
+          <ion-input type="email"
+                    placeholder="Email"
+                    required
+                    name="email" value="" [(ngModel)]= "usuario.email"
+                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                    ></ion-input>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+ 
+
+ 
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label  floating>Contraseña:</ion-label>
+          <ion-input  type="password"
+                      placeholder="Ingrese contraseña"
+                      required
+                      name="password" value="" [(ngModel)]= "usuario.password"
+                      ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </form>
+
+
+  <ion-button [disabled] ="formulario.invalid"
+  type="submit" expand="block" routerLink="/alumno" >INICIAR SESÍON</ion-button>
+
+  <a   id="informacion" routerLink="/registrapp">CONÓCENOS</a>
+
+  <a  id="link2" routerLink="/recuperacion">Recuperar contraseña</a>
+
+  <a  id="link1" routerLink="/registro" >Registrarse</a>
+  
+
+</ion-card>
+<a  id="doc" routerLink="/docente" >Docente</a>
+
+</ion-content>
+
+

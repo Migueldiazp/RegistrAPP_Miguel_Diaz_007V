@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  
+    <ion-title>Portal Docente</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <a  id="cerrar"  routerLink="/inicio" >Cerrar sesion</a>
+
+ 
+<ion-card>
+  <ion-button type="submit"  expand="block" routerLink="/captura" >GENERAR CODIGO QR</ion-button>
+  <BR>
+    <ion-button type="submit"  expand="block" routerLink="/asociar" >NUEVO ALUMNO</ion-button>
+  <BR>
+    <ion-button type="submit"  expand="block" routerLink="/info-docente" >INFORMACION DE CLASES</ion-button>
+</ion-card>
+
+
+
+
+  
+
+</ion-content>
+

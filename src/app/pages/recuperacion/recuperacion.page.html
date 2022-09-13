@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>Rut:</ion-label>
+            <ion-input type="text"
+                      placeholder="ejemplo:16542326-7"
+                      required
+                      name="rut" value="" [(ngModel)]= "recupera.rut"
+                      ></ion-input>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>Correo:</ion-label>
+            <ion-input type="email"
+                        placeholder="correo DUOC"
+                        name="email" value="" [(ngModel)]= "recupera.email"
+                        required
+                        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+    </form>
+
+
+    <ion-button [disabled] ="formulario.invalid" type="submit" expand="block" (click)="Recupera()" routerLink="/inicio">RECUPERAR
+
+  </ion-button>
+
+
+</ion-card>
+
+</ion-content>

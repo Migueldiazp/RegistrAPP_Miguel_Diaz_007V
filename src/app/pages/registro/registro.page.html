@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+
+    <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+      
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label  floating>Nombre:</ion-label>
+            <ion-input  type="text"
+                        placeholder="Ingrese Nombre"
+                        required
+                        name="nombre" value="" [(ngModel)]= "registro.nombre"
+                        ></ion-input>
+          </ion-item>
+        </ion-col>  
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label  floating>Apellido:</ion-label>
+            <ion-input  type="text"
+                        placeholder="Apellido paterno"
+                        required
+                        name="apellido" value="" [(ngModel)]= "registro.apellido"
+                        ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label  floating>Rut:</ion-label>
+            <ion-input  type="text"
+                        placeholder="ejemplo:16542326-7"
+                        required
+                        name="rut" value="" [(ngModel)]= "registro.rut"
+                        pattern="^([a-zA-Z0-9]+)-([a-zA-Z0-9])$"
+                        ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>Correo:</ion-label>
+            <ion-input type="email"
+                      placeholder="Correo DUOC"
+                      required
+                      name="email" value="" [(ngModel)]= "registro.email"
+                      pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                      ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+ 
+
+  
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label  floating>Contraseña:</ion-label>
+            <ion-input  type="password"
+                        placeholder="Ingrese contraseña"
+                        required
+                        name="password" value="" [(ngModel)]= "registro.password"
+                        ></ion-input>
+          </ion-item>
+        </ion-col>
+  
+      </ion-row>
+    </form>
+
+
+    <ion-button  [disabled] ="formulario.invalid"
+    type="submit" expand="block"  (click)="Registrar()" routerLink="/inicio">REGISTRARSE
+
+  </ion-button>
+
+
+</ion-card>
+
+</ion-content>
